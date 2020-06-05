@@ -11,7 +11,7 @@
 
 # Step 1:
 1. Set up packages and empty classes at first.
-![picture alt](folders.png)
+![picture alt](./images/folders.png)
 
 # Step 2:
 ### Controller - Initial 
@@ -19,7 +19,7 @@
 Controller is the interface (Schnittstelle) between our back- and frontend.
 1. First its necessary to initialize it.
  
-![picture alt](Controller1.png)
+![picture alt](./images/Controller1.png)
 
 # Step 3:
 ### Models
@@ -27,8 +27,8 @@ Controller is the interface (Schnittstelle) between our back- and frontend.
 1. Initialize your Task class, from which you create the core instances for your later program.   
 2. Dont forget to set `@Data` (for all the getters, setters & toString method) and `@AllArgsConstructor aswell as the `@NoArgsConstructor`.   
 3. Set up and initialize your Status-Class to provide Status-"Type" for the Task Class and also for the method setStatus (necessary later)      
-![picture alt](Task.png)
-![picture alt](Status.png)
+![picture alt](./images/Task.png)
+![picture alt](./images/Status.png)
 
 # Step 4:
 ### Database 
@@ -36,7 +36,7 @@ Controller is the interface (Schnittstelle) between our back- and frontend.
 1. Set up your Database with an empty Arraylist of Tasks, which will store all the instances of Tasks.  
 2. Dont forget to set @Data and @Repository(to provide dependency Injection for the Service class)
 3. You create all the methods which logic right here aswell.     
-![picture alt](Database.png)
+![picture alt](./images/Database.png)
 
 # Step 5:
 ### Service
@@ -48,7 +48,7 @@ Controller is the interface (Schnittstelle) between our back- and frontend.
 Example:    
 `public Task removeTask(String id) {return database.removeTask(id); }``
 
-![picture alt](Service.png)
+![picture alt](./images/Service.png)
 
 # Step 6:
 #### Explanation for method `add`:
@@ -60,7 +60,7 @@ For this purpose we call the setId and setStatus method of the Task-Class.
 * The setId method expects an String-parameter - herefore we cast a random UUID to a String. 
 * The setStatus method assigns the OPEN Status to the added Task, because the method addTask is called only when a new Task is created (new Tasks are of course always "open")
 
-![picture alt](Service.png)
+![picture alt](./images/Service.png)
 
 # Step 7:
 ## Controller + FrontEnd-API
@@ -77,13 +77,13 @@ For this purpose we call the setId and setStatus method of the Task-Class.
       2. the requests Method is **PUT**
       3. the provided String is **blub** (User Input). This string will become our **description** parameter in our **addTask** Method.
 
-![picture alt](network%20add%20api.png)
+![picture alt](./images/network%20add%20api.png)
 
 ## Step 7.1.1
 #### Typical Backend Response
 In the image below you can see the `response` of the backend after passing into the addTask Method, because the addTask method receives the description `blub` through the User, adds the `id`and the `status` inside the `Service`-Class, stores everything in the `Database`-Class and **after** all that steps it replys everything back to frontend(which is actually not mandatory, but nice to have, because we can observe that result now in Response-Tab of our Browser - see below).
 
-![picture alt](network%20add%20response.png)
+![picture alt](./images/network%20add%20response.png)
 
 ## Step 7.2
 #### We continue with our move-Method (which is changing the Status from "Open" to "in Progress" to "Done" whenever to click on the corresponding button)
@@ -91,14 +91,14 @@ In the image below you can see the `response` of the backend after passing into 
    * To grab and use this information its necessary to write an API-Endpoint in our Controller which is accepting the String, which uses our ID and status as path (`{id}/status`) and which has PUT as request Method.
     
     
-![picture alt](network%20-%20change%20status.png)
+![picture alt](./images/network%20-%20change%20status.png)
 
 ## Step 7.3
 #### Finally the delete-Method 
    * If you click on the delete button on a single Item our FrontEnd is providing us the ID-Path with a requested DELETE-Method.
    * Here you need to write an API-Endpoint in our controller which is just handling the ID `{Id}` and which has a `@DeleteMapping`-Annotation
     
-![picture alt](network%20delete.png)
+![picture alt](./images/network%20delete.png)
 
 ## Step 8
 ### **Grande Finale**
@@ -120,7 +120,7 @@ In the image below you can see the `response` of the backend after passing into 
    3.1 The corresponding Id will be passed from the @DeleteMapping Annotation through the @Pathvariale Annotation inside the Methods Statement taskService.removeTask(id); 
    
    3.2 Note that its really important that the Pathvariable Parameter in `remove` has the same spelling like the parameter in the @DeleteMapping. (The same goes for the @Pathvariable in the parameter of the "move"-method above.)
-![picture alt](Controller2.png)
+![picture alt](./images/Controller2.png)
 
 
 ##Thats all - after all these steps start the server and have fun :p 
