@@ -26,8 +26,9 @@ Controller is the interface (Schnittstelle) between our back- and frontend.
 
 1. Initialize your Task class, from which you create the core instances for your later program.   
 2. Dont forget to set `@Data` (for all the getters, setters & toString method) and `@AllArgsConstructor aswell as the `@NoArgsConstructor`.   
-3. Set up and initialize your Status-Class to provide Status-"Type" for the Task Class and also for the method setStatus (necessary later)      
+     
 ![picture alt](./images/Task.png)
+3. Set up and initialize your Status-Class to provide Status-"Type" for the Task Class and also for the method setStatus (necessary later) 
 ![picture alt](./images/Status.png)
 
 # Step 4:
