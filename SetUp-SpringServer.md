@@ -1,6 +1,6 @@
 ## Setup Spring Server for an ToDo App Backend! 
 
-###Architecture of the Backend
+### Architecture of the Backend
 
  *exemplary classes for our backend-infrastructure*
 
@@ -66,7 +66,7 @@ For this purpose we call the setId and setStatus method of the Task-Class.
 ## Controller + FrontEnd-API
 
 ### <ins>**Important!**</ins>    
-###**Dependent on the Information provided by the FrontEnd Application you have to configure the API-Endpoints in your Backend Controller.**
+### **Dependent on the Information provided by the FrontEnd Application you have to configure the API-Endpoints in your Backend Controller.**
 
 ## Step 7.1
 ####  We begin with our add-Method
@@ -123,7 +123,7 @@ In the image below you can see the `response` of the backend after passing into 
 ![picture alt](./images/Controller2.png)
 
 
-##Thats all - after all these steps start the server and have fun :p 
+## Thats all - after all these steps start the server and have fun :p 
 
 
 
